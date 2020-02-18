@@ -1,14 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addPost">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:roundAsCircle="true"
+        android:id="@+id/addPostProfilePic"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_toRightOf="@+id/addPostProfilePic"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:textSize="18sp"
+        android:text="Your Name"
+        android:textColor="#000000"
+        android:id="@+id/addPost_displayName"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_toRightOf="@+id/addPostProfilePic"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/addPost_displayName"
+        android:textSize="18sp"
+        android:text="Email"
+        android:id="@+id/addPost_email"
+        />
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addPost_email"
+        android:layout_marginTop="30dp"
+        android:id="@+id/post_head"
+        android:text="Your Post-"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginHorizontal="20dp"
 
-</FrameLayout>
+        />
+
+
+    <EditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginHorizontal="20dp"
+         android:layout_below="@id/post_head"
+         android:minHeight="100dp"
+         android:hint="Hey! What's on your mind? \nLet the others know!"
+         android:textAlignment="viewStart"
+         android:id="@+id/postText"
+         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/postText"
+        android:layout_marginLeft="30dp"
+        android:text="Add Image"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffff"
+        android:id="@+id/add_image"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/orange_bg"
+        android:padding="15dp"
+        />
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/addPost_btn"
+        android:layout_below="@+id/add_image"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/images_rv_addPost"
+        />
+
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:text="ADD POST"
+        android:background="@drawable/round_bg"
+        android:textColor="#ffffff"
+        android:id="@+id/addPost_btn"/>
+
+
+</RelativeLayout>
